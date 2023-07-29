@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Virgol.Views.ViewModel.RoleViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table me-4">
+    <tr class="table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.RoleTitle)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoleTitle)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RoleID }, new {@class="btn btn-warning"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RoleID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

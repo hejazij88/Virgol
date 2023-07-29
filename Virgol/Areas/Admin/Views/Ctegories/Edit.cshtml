@@ -1,0 +1,39 @@
+﻿@model Virgol.Views.ViewModel.CategoryViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+@using (Html.BeginForm("Edit", "Ctegories", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="d-flex justify-content-center">
+        <div class="form-horizontal card ">
+            <br />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.CtegoryId)
+            <div class=" mb-4">
+                <div class="form-group margin-top me-5">
+                    @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group margin-top me-4">
+                    @Html.HiddenFor(model => model.ImageName, new { htmlAttributes = new { @class = "form-control" } })
+                    <img src="~/Images/Category/@Model.ImageName" class="photo200-120 rounded-circle me-5" id="newImagePreview"><br />
+                    <input type="file" class="form-control margin-top" name="imageUpload" id="imageUpload" onchange="imagePreview(this)" value="noPhoto.png" />
+                    @Html.ValidationMessageFor(model => model.ImageName, "", new { @class = "text-danger margin-top" })
+                </div>
+            </div>
+
+            <div class="form-group card-footer margin-top d-flex justify-content-center">
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })|
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/Site.js"></script>

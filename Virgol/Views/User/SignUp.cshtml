@@ -1,0 +1,73 @@
+﻿@model Virgol.Views.ViewModel.UserViewModel
+
+@{
+    ViewBag.Title = "SignUp";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <section class="text-center">
+            <div class="p-5 bg-image" style=" background-image: url('../../Images/icon/Log_In.png');
+      height: 300px; "></div>
+
+            <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+                <div class="card-body py-5 px-md-5">
+
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-8">
+                            <h2 class="fw-bold mb-5">Sign up</h2>
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" id="Name" name="Name" placeholder="Name" class="form-control" />
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-4">
+                                        <div class="form-outline">
+                                            <input type="text" id="Family" name="Family" placeholder="Family" class="form-control" />
+                                            @Html.ValidationMessageFor(model => model.Family, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6 mb-4">
+                                        <input type="text" id="PhoneNumber" name="PhoneNumber" placeholder="PhoneNumber" class="form-control" />
+                                        @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="col-md-6 mb-4">
+                                        <input type="password" id="Password" name="Password" placeholder="Password" class="form-control" />
+                                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-check d-flex justify-content-center mb-4">
+                                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                                    <label class="form-check-label" for="form2Example33">
+                                        Subscribe to our newsletter
+                                    </label>
+                                </div>
+
+                                <button type="submit" value="Create" class="btn btn-primary btn-block mb-4">
+                                    Sign up
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+}

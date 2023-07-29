@@ -1,0 +1,31 @@
+﻿@model Virgol.Views.ViewModel.CategoryViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+<h3 class="text-center">Are you sure you want to delete @ViewBag.TitleCategory?</h3>
+<div class="d-flex justify-content-center">
+<div class="form-horizontal card ">
+    <br />
+    <div class="mb-4">
+        <div class="form-group margin-top col me-4">
+            <label>Title:</label>
+            @Html.DisplayFor(model => model.Title)
+        </div>
+    </div>
+    <div class="mb-4">
+        <div class="form-group me-4 margin-top ">
+            <img src="~/Images/Category/@Model.ImageName" class="margin-top rounded-circle photo200-120" id="newImagePreview"><br />
+
+        </div>   
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group card-footer margin-top d-flex justify-content-center">
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        }
+    </div>
+</div>
+</div>

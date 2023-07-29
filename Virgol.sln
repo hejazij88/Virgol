@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgol", "Virgol\Virgol.csproj", "{04BC3157-52A6-4CC2-BC5E-B4DB58AAD71B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgol.Model", "Virgol_Model\Virgol.Model.csproj", "{00D2D859-93A6-4D81-B94E-31E453563B71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgol.Repository", "Virgol.Repository\Virgol.Repository.csproj", "{B3A0CC07-E72F-4211-8F92-A84FDB95E434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Virgol.Service", "Virgol.Service\Virgol.Service.csproj", "{D7656E46-2BEF-4753-99CB-7BECFAF98BD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04BC3157-52A6-4CC2-BC5E-B4DB58AAD71B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04BC3157-52A6-4CC2-BC5E-B4DB58AAD71B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04BC3157-52A6-4CC2-BC5E-B4DB58AAD71B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04BC3157-52A6-4CC2-BC5E-B4DB58AAD71B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00D2D859-93A6-4D81-B94E-31E453563B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00D2D859-93A6-4D81-B94E-31E453563B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00D2D859-93A6-4D81-B94E-31E453563B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00D2D859-93A6-4D81-B94E-31E453563B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A0CC07-E72F-4211-8F92-A84FDB95E434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A0CC07-E72F-4211-8F92-A84FDB95E434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A0CC07-E72F-4211-8F92-A84FDB95E434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A0CC07-E72F-4211-8F92-A84FDB95E434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7656E46-2BEF-4753-99CB-7BECFAF98BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7656E46-2BEF-4753-99CB-7BECFAF98BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7656E46-2BEF-4753-99CB-7BECFAF98BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7656E46-2BEF-4753-99CB-7BECFAF98BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {381D6DC2-2071-45ED-A533-8044F62A1DAD}
+	EndGlobalSection
+EndGlobal

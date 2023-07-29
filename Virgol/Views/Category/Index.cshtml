@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Virgol.Views.ViewModel.CategoryViewModel>
+
+@{
+    ViewBag.Title = "Categorys";
+}
+
+@foreach (var item in Model)
+{
+    <div class="pt-5 col-lg-4 border-start custom-border">
+        <div class="post-entry-1">
+            <a href="/Category/Filter/@item.CtegoryId"><img src="~/Images/Category/@item.ImageName" alt="Category Image" class="img-fluid imgbody"></a>
+            <h2><a href="/Category/Filter/@item.CtegoryId">@item.Title</a></h2>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Virgol.Views.ViewModel.ArticleViewModel>
+
+@{
+    ViewBag.Title = "Articles";
+}
+
+<table class="table rounded me-4">
+    <tr class="table-dark">
+        <th>
+            @Html.DisplayNameFor(model => model.Ctegory.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateRegester)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ctegory.Title)
+            </td>
+            <td>
+                <span>@item.User.PhoneNumber</span>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <img src="~/Images/Article/@item.ImageName" class="rounded-circle photo200-120" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRegester)
+            </td>
+            <td>
+                @if (item.IsActive == true)
+                {<span class="text-success">Active</span> }
+                else
+                {<span class="text-danger">UnActive</span>}
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ArticleId }, new {@class= "btn btn-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ArticleId }, new { @class = "btn btn-secondary" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ArticleId }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.ActionLink("Create New", "Create", null, new {@class= "btn btn-success me-4" })

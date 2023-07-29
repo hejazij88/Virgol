@@ -1,0 +1,70 @@
+﻿@model Virgol.Views.ViewModel.ArticleViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+    <div class="d-flex justify-content-center">
+        <div class="form-horizontal card ">
+            <br />
+            <div class="row mb-4">
+                <div class="form-group margin-top me-4 col">
+                    <label>Category:</label>
+                    @Html.DisplayFor(model => model.Ctegory.Title)
+
+                </div>
+                <div class="form-group margin-top col me-4">
+                    <label>Phone:</label>
+                    @Html.DisplayFor(model => model.User.PhoneNumber)
+
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="form-group me-4 margin-top col">
+                    <label>Title:</label>
+                    @Html.DisplayFor(model => model.Title)
+
+                </div>
+
+                <div class="form-group margin-top me-4 col">
+                   
+                    <label>Like:</label>
+                    @Html.DisplayFor(model => model.Like)
+
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="form-group me-4 margin-top col">
+                  
+                    <label>IsActive:</label>
+                    @if (Model.IsActive == true)
+                    {<span class="text-success">Active</span> }
+                    else
+                    {<span class="text-danger">UnActive</span>}
+                </div>
+
+                <div class="form-group margin-top me-4 col">
+                    <label>Date:</label>
+                    @Html.DisplayFor(model => model.DateRegester)
+
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="form-group me-4 margin-top col">
+                    <label class="col-md-2 control-label">Image</label>
+                    <img src="~/Images/Article/@Model.ImageName" class="photo200-120 rounded-circle" id="newImagePreview">
+                    <div/>
+                    <div class="form-group margin-top me-4 col">
+                        @Html.DisplayNameFor(model => model.Content)
+                        @Html.Raw(Model.Content)
+                    </div>
+                </div>
+            <div class="form-group card-footer margin-top d-flex justify-content-center">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ArticleId }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Back to List", "Index", null, new {@class="btn btn-primary"})
+            </div>
+        </div>
+    </div>
+</div>

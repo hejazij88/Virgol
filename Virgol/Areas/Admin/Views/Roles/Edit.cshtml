@@ -1,0 +1,33 @@
+﻿@model Virgol.Views.ViewModel.RoleViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="d-flex justify-content-center">
+        <div class="form-horizontal card ">
+            @Html.AntiForgeryToken()
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.RoleID)
+            <br />
+            <div class="mb-4">
+                <div class="form-group margin-top col me-4">
+                    @Html.LabelFor(model => model.RoleTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.EditorFor(model => model.RoleTitle, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RoleTitle, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group card-footer margin-top d-flex justify-content-center">
+                <input type="submit" value="Save" class="btn btn-success" /> |
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

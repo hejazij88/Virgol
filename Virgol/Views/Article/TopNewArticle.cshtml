@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Virgol.Views.ViewModel.ArticleViewModel>
+@foreach (var item in Model)
+{
+    <div class="pt-5 col-lg-4 border-start custom-border">
+        <div class="post-entry-1">
+            <a href="/Article/index/Id"><img src="~/Images/Article/@item.ImageName" alt="" class="img-fluid imgbody"></a>
+            <div class="post-meta"><span>@item.DateRegester.Date</span></div>
+            <h2><a href="/Article/index/@item.ArticleId">@item.Title</a></h2>
+        </div>
+    </div>
+}

@@ -1,0 +1,89 @@
+﻿@using System.Web.Optimization
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="~/Images/icon/logo.png" height="45" /></a>
+        <ul class="navbar-nav me-auto d-flex align-items-center">
+            <li class="pad-left">
+                <a class="nav-link text-reset mb-3" href="#">Wellcome @User.Identity.Name</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-auto bg-light sticky-top">
+                <div class="d-flex flex-sm-column flex-row flex-nowrap bg-light align-items-center sticky-top">
+                    <ul class="nav nav-pills nav-flush flex-sm-column flex-row flex-nowrap mb-auto mx-auto text-center align-items-center">
+                        <li class="nav-item">
+                            <a href="/Home/Index" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                                <i class="bi-house fs-3"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Default/Index" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                                <i class="bi-speedometer2 fs-3"></i>
+                            </a>
+                        </li>
+                       
+                            <li>
+
+                                <a href="/Admin/Articles/Index" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Articles">
+                                    <i class="bi bi-file-text-fill fs-3"></i>
+                                </a>
+
+                            </li>
+                            <li>
+                                <a href="/Admin/Ctegories/Index" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Categories">
+                                    <i class="bi bi-collection fs-3"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Users/Index" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Users">
+                                    <i class="bi-people fs-3"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Roles/Index" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Roles">
+                                    <i class="bi bi-puzzle-fill fs-3"></i>
+                                </a>
+
+                            </li>
+                        <li>
+                            <a href="/User/SingOut" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Sign Out">
+                                <i class="bi bi-box-arrow-left fs-3"></i>
+                            </a>
+                        </li>
+                        
+                            <li>
+                                <a href="/Admin/Slider/Index" class="nav-link py-3 px-2" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                                    <i class="bi bi-sliders fs-3"></i>
+                                </a>
+                            </li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm p-3 min-vh-100">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        @Scripts.Render("~/Scripts/js")
+    </body>
+</html>

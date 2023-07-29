@@ -1,0 +1,66 @@
+﻿@model Virgol.Views.ViewModel.UserViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<h3 class="text-center">Are you sure you want to delete @ViewBag.Delete?</h3>
+
+<div class="d-flex justify-content-center">
+<div class="form-horizontal card ">
+    <br />
+    <div class="row mb-5">
+        <div class="form-group margin-top me-5 col">
+            @Html.DisplayNameFor(model => model.Role.RoleTitle)
+
+            @Html.DisplayFor(model => model.Role.RoleTitle)
+        </div>
+        <div class="form-group margin-top col me-5">
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+            @Html.DisplayFor(model => model.PhoneNumber)
+
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="form-group me-5 margin-top col">
+            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayFor(model => model.Name)
+
+        </div>
+        <div class="form-group me-5 margin-top col">
+            @Html.DisplayNameFor(model => model.Family)
+            @Html.DisplayFor(model => model.Family)
+
+
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="form-group me-5 margin-top col">
+            @Html.DisplayNameFor(model => model.RegesterDate)
+            @Html.DisplayFor(model => model.RegesterDate)
+        </div>
+        <div class="form-group margin-top me-5 col">
+            @if (Model.IsActive == true)
+            {
+                <span class="text-success">Active</span>
+            }
+            else
+            {
+                <span class="text-danger">UnActive</span>
+            }
+            @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+<div class="form-group card-footer d-flex justify-content-center">
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+</div>
+    }
+    </div>
+</div>

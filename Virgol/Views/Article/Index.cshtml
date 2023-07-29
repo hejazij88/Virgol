@@ -1,0 +1,26 @@
+﻿@model Virgol.Views.ViewModel.ArticleViewModel
+@{
+    ViewBag.Title = "Article";
+}
+
+<main id="main">
+
+    <section class="single-post-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 post-content" data-aos="fade-up">
+
+                    <div class="single-post">
+                        <div class="post-meta"><span class="date">@Model.Ctegory.Title</span> <span class="mx-1">&bullet;</span> <span>@Model.DateRegester</span></div>
+                        <h1 class="mb-5">@Model.Title</h1>
+                        <figure class="my-4">
+                            <img src="~/Images/Article/@Model.ImageName" alt="ImageArticle" class="imageArticle">
+                        </figure>
+                        @Html.Raw(Model.Content)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
